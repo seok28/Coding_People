@@ -1,4 +1,4 @@
-package Fragment
+package com.example.mobile_programming.Fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,16 +8,7 @@ import android.view.ViewGroup
 import com.example.mobile_programming.R
 
 
-/**
- * A simple [Fragment] subclass.
- * Use the [ThirdFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ThirdFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

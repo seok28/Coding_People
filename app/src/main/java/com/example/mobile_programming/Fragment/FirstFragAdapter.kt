@@ -1,4 +1,4 @@
-package Fragment
+package com.example.mobile_programming.Fragment
 
 import android.content.Context
 import android.view.LayoutInflater

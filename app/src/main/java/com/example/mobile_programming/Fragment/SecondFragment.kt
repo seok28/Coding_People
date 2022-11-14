@@ -1,4 +1,4 @@
-package Fragment
+package com.example.mobile_programming.Fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,11 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.mobile_programming.R
 
-
-
-/**
- * A simple [Fragment] subclass.
- */
 class SecondFragment : Fragment() {
 
     override fun onCreateView(

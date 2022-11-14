@@ -1,4 +1,4 @@
-package Fragment
+package com.example.mobile_programming.Fragment
 
 class ContentListModel (
 

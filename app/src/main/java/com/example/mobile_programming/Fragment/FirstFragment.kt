@@ -1,17 +1,16 @@
-package Fragment
+package com.example.mobile_programming.Fragment
 
+
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.mobile_programming.Fragment.MarketInfo.MarketInfoActivity
 import com.example.mobile_programming.R
 import kotlinx.android.synthetic.main.fragment_first.view.*
 
-
-/**
- * A simple [Fragment] subclass.
- */
 class FirstFragment : Fragment() {
 
     override fun onCreateView(
@@ -34,7 +33,11 @@ class FirstFragment : Fragment() {
         val list_adapter = FirstFragAdapter(requireContext(), list_array)
         view.listview_first_fragment.adapter = list_adapter
 
-        // Inflate the layout for this fragment
+      view.listview_first_fragment.setOnItemClickListener { parent, view, position, id ->
+          val intent = Intent(requireContext(), MarketInfoActivity:: class.java)
+          startActivity(intent)
+      }
+
         return view
     }
 
