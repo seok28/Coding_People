@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
             "php",
             "png",
             "psd",
-            "tiff",
+            "tif",
         )
         val gridviewAdapter = GridviewAdapter(this,img,text)
         gridview.adapter = gridviewAdapter
