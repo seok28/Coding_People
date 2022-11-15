@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.TextView
+import com.example.mobile_programming.Fragment.FragmentAdapter
 import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.activity_lecutre.*
 

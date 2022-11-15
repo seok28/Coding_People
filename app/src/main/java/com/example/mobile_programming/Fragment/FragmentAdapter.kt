@@ -1,4 +1,4 @@
-package com.example.mobile_programming
+package com.example.mobile_programming.Fragment
 
 import com.example.mobile_programming.Fragment.FirstFragment
 import com.example.mobile_programming.Fragment.SecondFragment

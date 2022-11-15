@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.viewpager.widget.ViewPager
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.bottom.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -27,7 +28,7 @@ class MainActivity : AppCompatActivity() {
             R.drawable.php,
             R.drawable.png,
             R.drawable.psd,
-            R.drawable.tiff,
+            R.drawable.mobile,
         )
         val text = arrayOf(
             "ai",
@@ -41,7 +42,7 @@ class MainActivity : AppCompatActivity() {
             "php",
             "png",
             "psd",
-            "tif",
+            "tiff",
         )
         val gridviewAdapter = GridviewAdapter(this,img,text)
         gridview.adapter = gridviewAdapter
@@ -56,5 +57,10 @@ class MainActivity : AppCompatActivity() {
         viewpager = findViewById(R.id.viewpager) as ViewPager
         val adapter = ViewPagerAdapter(this)
         viewpager.adapter = adapter
+
+        my_page.setOnClickListener {
+
+
+        }
     }
 }
