@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "262665874813",
+    "project_id": "comin-e9341",
+    "storage_bucket": "comin-e9341.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:262665874813:android:f8d781b77cb899e619b014",
+        "android_client_info": {
+          "package_name": "com.example.mobile_programming"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "262665874813-q1r8sd23t4ae8m2fhjhtvk5ha86f68c5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAD2NQ_7ynKQgx7_JlAw8LZaABwImNaork"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "262665874813-q1r8sd23t4ae8m2fhjhtvk5ha86f68c5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
