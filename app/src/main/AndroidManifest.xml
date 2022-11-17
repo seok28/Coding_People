@@ -14,42 +14,49 @@
         android:theme="@style/Theme.Mobile_Programming"
         tools:targetApi="31">
         <activity
-            android:name=".MyActivity"
+            android:name="com.example.mobile_programming.Auth.JoinInfoActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".JoinActivity"
+            android:name="com.example.mobile_programming.Auth.MyActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name="com.example.mobile_programming.Auth.JoinActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".MarketInfoActivity"
+            android:name="com.example.mobile_programming.Auth.LoginActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".LecutreActivity"
+            android:name="com.example.mobile_programming.Fragment.MarketInfo.MarketInfoActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.mobile_programming.Lecture"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name="com.example.mobile_programming.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -61,7 +68,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity android:name=".Fragment.MarketInfo.MarketInfoActivity" />
+<!--        <activity android:name=".Fragment.MarketInfo.MarketInfoActivity" />-->
     </application>
 
 </manifest>

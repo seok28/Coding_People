@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
 
         gridview.setOnItemClickListener { parent, view, position, id ->
 
-            val intent = Intent(this, LecutreActivity::class.java)
+            val intent = Intent(this, Lecture::class.java)
             startActivity(intent)
 
         }

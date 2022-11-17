@@ -9,7 +9,7 @@ import com.example.mobile_programming.Fragment.FragmentAdapter
 import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.activity_lecutre.*
 
-class LecutreActivity : AppCompatActivity() {
+class Lecture : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lecutre)
