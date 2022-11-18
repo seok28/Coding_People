@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import com.example.mobile_programming.MainActivity
 import com.example.mobile_programming.R
+import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_join_info.*
@@ -20,7 +21,7 @@ class JoinInfoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_join_info)
-
+        FirebaseApp.initializeApp(this)
         auth = FirebaseAuth.getInstance()
 
 

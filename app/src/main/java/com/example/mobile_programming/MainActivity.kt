@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.viewpager.widget.ViewPager
 import com.example.mobile_programming.Auth.LoginActivity
 import com.example.mobile_programming.Auth.MyActivity
+import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.bottom.*
@@ -15,13 +16,11 @@ class MainActivity : AppCompatActivity() {
 
     internal lateinit var viewpager : ViewPager
     private lateinit var auth : FirebaseAuth
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         auth = FirebaseAuth.getInstance()
-
+        FirebaseApp.initializeApp(this)
         val img = arrayOf(
             R.drawable.ai,
             R.drawable.css,
