@@ -17,29 +17,29 @@ class JoinInfoActivity : AppCompatActivity() {
     private lateinit var auth : FirebaseAuth
     private val db = FirebaseFirestore.getInstance()
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_join_info)
         FirebaseApp.initializeApp(this)
+        setContentView(R.layout.activity_join_info)
+
         auth = FirebaseAuth.getInstance()
-
-
+        FirebaseApp.initializeApp(this);
         join_info_login_button.setOnClickListener {
 
-            val user = hashMapOf(
+            val city = hashMapOf(
                 "nickname" to join_info_email_area.text.toString()
             )
 
-            db.collection("users")
+            db.collection("user")
                 .document(auth.currentUser?.uid.toString())
-                .set(user)
-                .addOnSuccessListener { Log.e("JoinInfoActivity", "성공")
-                    val intent = Intent(this, MainActivity::class.java)
-                    startActivity(intent)}
+                .set(city)
+                .addOnSuccessListener { Log.e("JoinInfoActivity", "성공") }
                 .addOnFailureListener { e -> Log.e("JoinInfoActivity", "실패 ",e) }
 
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
 
+            finish()
 
         }
 

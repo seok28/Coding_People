@@ -3,7 +3,8 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-android-extensions'
 }
-    apply plugin: 'com.android.application'
+
+    apply plugin: 'com.google.gms.google-services'
 
 android {
     namespace 'com.example.mobile_programming'

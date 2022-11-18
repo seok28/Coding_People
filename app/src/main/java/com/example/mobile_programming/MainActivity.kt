@@ -13,14 +13,13 @@ import kotlinx.android.synthetic.main.bottom.*
 
 
 class MainActivity : AppCompatActivity() {
-
     internal lateinit var viewpager : ViewPager
     private lateinit var auth : FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         auth = FirebaseAuth.getInstance()
-        FirebaseApp.initializeApp(this)
+        FirebaseApp.initializeApp(this);
         val img = arrayOf(
             R.drawable.ai,
             R.drawable.css,

@@ -8,17 +8,16 @@ import com.example.mobile_programming.R
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_join.*
-import kotlinx.android.synthetic.main.activity_login.*
 
 class JoinActivity : AppCompatActivity() {
 
     private lateinit var auth : FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_join)
-        FirebaseApp.initializeApp(this)
-        auth = FirebaseAuth.getInstance()
 
+        setContentView(R.layout.activity_join)
+        auth = FirebaseAuth.getInstance()
+        FirebaseApp.initializeApp(this);
         join_login_button.setOnClickListener {
             auth.createUserWithEmailAndPassword(join_email_area.text.toString(), join_password_area.text.toString())
                 .addOnCompleteListener(this){task ->

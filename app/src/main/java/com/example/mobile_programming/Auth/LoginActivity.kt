@@ -17,9 +17,8 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        FirebaseApp.initializeApp(this)
         auth = FirebaseAuth.getInstance()
-
+        FirebaseApp.initializeApp(this);
         login_button.setOnClickListener {
             auth.signInWithEmailAndPassword(email_area.text.toString(), password_area.text.toString())
                 .addOnCompleteListener(this)  { task ->
