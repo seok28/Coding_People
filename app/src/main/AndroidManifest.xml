@@ -15,7 +15,7 @@
         tools:replace="android:allowBackup"
         tools:targetApi="33">
         <activity
-            android:name=".WriteActivity"
+            android:name="com.example.mobile_programming.Fragment.MarketInfo.WriteActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -50,7 +50,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".MarketInfoActivity"
+            android:name="com.example.mobile_programming.Fragment.MarketInfo.MarketInfoActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

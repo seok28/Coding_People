@@ -45,7 +45,7 @@ class WriteActivity : AppCompatActivity() {
 
             val form = hashMapOf(
 
-                "test" to text_input_area.text.toString(),
+                "text" to text_input_area.text.toString(),
                 "writer" to nickname,
                 "rating" to rating_num
 
@@ -57,7 +57,7 @@ class WriteActivity : AppCompatActivity() {
                 .addOnFailureListener { e-> Log.w("WriteActivity","에러 발생",e) }
 
 
-                Toast.makeText(this, "입력됨",Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "리뷰가 작성되었습니다.",Toast.LENGTH_LONG).show()
 
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
