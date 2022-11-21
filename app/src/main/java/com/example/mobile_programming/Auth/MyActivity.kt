@@ -1,5 +1,6 @@
 package com.example.mobile_programming.Auth
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.mobile_programming.R
@@ -21,7 +22,11 @@ class MyActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
 
 //        FirebaseApp.initializeApp(this);
-
+        logout_btn.setOnClickListener {
+            auth.signOut()
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
         val docRef = db.collection("user").document(auth.currentUser?.uid.toString())
 
         docRef.get().addOnSuccessListener { documentSnapshot ->

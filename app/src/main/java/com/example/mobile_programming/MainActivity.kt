@@ -62,6 +62,12 @@ class MainActivity : AppCompatActivity() {
         val adapter = ViewPagerAdapter(this)
         viewpager.adapter = adapter
 
+
+        home_btn.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+
         my_page.setOnClickListener {
 
             if(auth.currentUser == null) {
@@ -73,5 +79,7 @@ class MainActivity : AppCompatActivity() {
             }
 
         }
+
+
     }
 }
