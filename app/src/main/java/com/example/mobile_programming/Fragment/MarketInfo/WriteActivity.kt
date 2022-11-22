@@ -28,7 +28,7 @@ class WriteActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
 
 
-        // rating
+        // rating(별점)
 
         rating_area.setOnRatingBarChangeListener { ratingBar, fl, b ->
             rating_num = fl.toString()
@@ -59,7 +59,7 @@ class WriteActivity : AppCompatActivity() {
 
                 Toast.makeText(this, "리뷰가 작성되었습니다.",Toast.LENGTH_LONG).show()
 
-                val intent = Intent(this, MainActivity::class.java)
+                val intent = Intent(this, ReviewFragment::class.java)
                 startActivity(intent)
 
                 finish()
