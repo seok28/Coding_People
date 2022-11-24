@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.mobile_programming">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="false"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -14,6 +15,13 @@
         android:theme="@style/Theme.Mobile_Programming"
         tools:replace="android:allowBackup"
         tools:targetApi="33">
+        <activity
+            android:name="com.example.mobile_programming.Fragment.ListFragment.VideoActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name="com.example.mobile_programming.Fragment.MarketInfo.WriteActivity"
             android:exported="false">

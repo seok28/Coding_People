@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.viewpager.widget.ViewPager
 import com.example.mobile_programming.Auth.LoginActivity
 import com.example.mobile_programming.Auth.MyActivity
+import com.example.mobile_programming.Fragment.ListFragment.VideoActivity
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
@@ -79,6 +80,11 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
             }
 
+        }
+
+        test_btn.setOnClickListener {
+            val intent = Intent(this, VideoActivity::class.java)
+            startActivity(intent)
         }
 
 
