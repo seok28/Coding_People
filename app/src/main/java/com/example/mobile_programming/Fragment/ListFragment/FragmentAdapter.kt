@@ -1,8 +1,5 @@
-package com.example.mobile_programming.Fragment
+package com.example.mobile_programming.Fragment.ListFragment
 
-import com.example.mobile_programming.Fragment.FirstFragment
-import com.example.mobile_programming.Fragment.SecondFragment
-import com.example.mobile_programming.Fragment.ThirdFragment
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter

@@ -62,6 +62,7 @@ class MainActivity : AppCompatActivity() {
         val adapter = ViewPagerAdapter(this)
         viewpager.adapter = adapter
 
+        // 버튼 클릭 리스너
 
         home_btn.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)

@@ -1,4 +1,4 @@
-package com.example.mobile_programming.Fragment
+package com.example.mobile_programming.Fragment.ListFragment
 
 
 import android.content.Intent
@@ -22,12 +22,15 @@ class FirstFragment : Fragment() {
 
         val list_array = arrayListOf<ContentListModel>(
             
-            ContentListModel("a","1번영상",1,"d"),
-            ContentListModel("a","2번영상",1,"d"),
-            ContentListModel("a","3번영상",1,"d"),
-            ContentListModel("a","4번영상",1,"d"),
-            ContentListModel("a","5번영상",1,"d")
-            
+            ContentListModel(R.drawable.list1,"언어1",1,"d"),
+            ContentListModel(R.drawable.list2,"언어2",1,"d"),
+            ContentListModel(R.drawable.list3,"언어3",1,"d"),
+            ContentListModel(R.drawable.list4,"언어4",1,"d"),
+            ContentListModel(R.drawable.list5,"언어5",1,"d"),
+            ContentListModel(R.drawable.list6,"언어6",1,"d"),
+            ContentListModel(R.drawable.list7,"언어7",1,"d"),
+            ContentListModel(R.drawable.list8,"언어8",1,"d"),
+            ContentListModel(R.drawable.list9,"언어9",1,"d")
         )
         
         val list_adapter = FirstFragAdapter(requireContext(), list_array)
