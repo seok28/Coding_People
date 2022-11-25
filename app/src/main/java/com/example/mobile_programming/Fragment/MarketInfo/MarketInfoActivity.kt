@@ -2,13 +2,18 @@ package com.example.mobile_programming.Fragment.MarketInfo
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.util.TypedValue
+import android.widget.Toast
 import com.example.mobile_programming.R
+import com.example.mobile_programming.Utils.FirebaseUtils
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_market_info.*
 
 class MarketInfoActivity : AppCompatActivity() {
+
+    private val TAG = MarketInfoActivity::class.java.simpleName
 
     private val auth :FirebaseAuth = FirebaseAuth.getInstance()
     private val db = FirebaseFirestore.getInstance()
@@ -16,6 +21,47 @@ class MarketInfoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_market_info)
+
+        Log.e(TAG,"onCreate")
+        lecture_text.text = intent.getStringExtra("title")
+
+        val lecture = hashMapOf(
+            "lecture_title" to intent.getStringExtra("title")
+        )
+        zzim.setOnClickListener {
+            FirebaseUtils.db
+                .collection("zzim")
+                .document(FirebaseUtils.getUid())
+                .set(lecture)
+                .addOnSuccessListener {
+                    Toast.makeText(this, "성공", Toast.LENGTH_LONG).show()
+                }
+                .addOnFailureListener {
+                    Toast.makeText(this, "실패", Toast.LENGTH_LONG).show()
+                }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_area, ContentFragment())

@@ -38,6 +38,7 @@ class FirstFragment : Fragment() {
 
       view.listview_first_fragment.setOnItemClickListener { parent, view, position, id ->
           val intent = Intent(requireContext(), MarketInfoActivity:: class.java)
+          intent.putExtra("title",list_array.get(position).title)
           startActivity(intent)
       }
 
