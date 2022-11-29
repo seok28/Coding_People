@@ -1,5 +1,6 @@
 package com.example.mobile_programming.Fragment.MarketInfo
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -15,8 +16,6 @@ class MarketInfoActivity : AppCompatActivity() {
 
     private val TAG = MarketInfoActivity::class.java.simpleName
 
-    private val auth :FirebaseAuth = FirebaseAuth.getInstance()
-    private val db = FirebaseFirestore.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,43 +24,23 @@ class MarketInfoActivity : AppCompatActivity() {
         Log.e(TAG,"onCreate")
         lecture_text.text = intent.getStringExtra("title")
 
-        val lecture = hashMapOf(
-            "lecture_title" to intent.getStringExtra("title")
-        )
+
         zzim.setOnClickListener {
+
+            header_zzim.text = "추가되었습니다."
+            header_zzim.setTextColor(Color.BLUE)
+
             FirebaseUtils.db
                 .collection("zzim")
                 .document(FirebaseUtils.getUid())
-                .set(lecture)
+                .update(intent.getStringExtra("title")!!,true)
                 .addOnSuccessListener {
-                    Toast.makeText(this, "성공", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "추가되었습니다.", Toast.LENGTH_LONG).show()
                 }
                 .addOnFailureListener {
-                    Toast.makeText(this, "실패", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "오류 발생", Toast.LENGTH_LONG).show()
                 }
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_area, ContentFragment())

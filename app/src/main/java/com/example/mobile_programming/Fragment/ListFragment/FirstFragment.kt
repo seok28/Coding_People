@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.mobile_programming.Fragment.MarketInfo.MarketInfoActivity
 import com.example.mobile_programming.R
+import com.example.mobile_programming.Utils.FirebaseUtils
 import kotlinx.android.synthetic.main.fragment_first.view.*
 
 class FirstFragment : Fragment() {
@@ -35,6 +36,45 @@ class FirstFragment : Fragment() {
         
         val list_adapter = FirstFragAdapter(requireContext(), list_array)
         view.listview_first_fragment.adapter = list_adapter
+
+
+
+
+
+
+
+        FirebaseUtils.db
+            .collection("zzim")
+            .document(FirebaseUtils.getUid())
+            .get()
+            .addOnSuccessListener { documentSnapshot ->
+                if (documentSnapshot.exists() ==true) {
+                    // Data 필드가 있을 때
+
+                }else {
+                    // Data 필드가 없을 때
+                    val lecture = hashMapOf(
+                        "언어1" to "",
+                        "언어2" to "",
+                        "언어3" to "",
+                        "언어4" to "",
+                        "언어5" to "",
+                        "언어6" to "",
+                        "언어7" to "",
+                        "언어8" to "",
+                        "언어9" to "",
+
+                    )
+                    FirebaseUtils.db
+                        .collection("zzim")
+                        .document(FirebaseUtils.getUid())
+                        .set(lecture)
+                        .addOnSuccessListener {  }
+                        .addOnFailureListener {  }
+
+                }
+            }
+            .addOnFailureListener {  }
 
       view.listview_first_fragment.setOnItemClickListener { parent, view, position, id ->
           val intent = Intent(requireContext(), MarketInfoActivity:: class.java)
