@@ -24,23 +24,61 @@ class MarketInfoActivity : AppCompatActivity() {
         Log.e(TAG,"onCreate")
         lecture_text.text = intent.getStringExtra("title")
 
+        // 찜 여부 확인
+        FirebaseUtils.db
+            .collection("zzim")
+            .document(FirebaseUtils.getUid())
+            .get()
+            .addOnSuccessListener { documentSnapshot ->
+
+                if(documentSnapshot.get(intent.getStringExtra("title")!!) == true) {
+                    header_zzim.text = "추가되었습니다."
+                    header_zzim.setTextColor(Color.BLUE)
+                }
+            }
+            .addOnFailureListener {  }
+
 
         zzim.setOnClickListener {
 
-            header_zzim.text = "추가되었습니다."
-            header_zzim.setTextColor(Color.BLUE)
+            // 이미 찜 되어있을 때
+            if(header_zzim.text.equals("추가되었습니다.")) {
+                header_zzim.text = "찜"
+                header_zzim.setTextColor(Color.RED)
 
-            FirebaseUtils.db
-                .collection("zzim")
-                .document(FirebaseUtils.getUid())
-                .update(intent.getStringExtra("title")!!,true)
-                .addOnSuccessListener {
-                    Toast.makeText(this, "추가되었습니다.", Toast.LENGTH_LONG).show()
-                }
-                .addOnFailureListener {
-                    Toast.makeText(this, "오류 발생", Toast.LENGTH_LONG).show()
-                }
-        }
+                FirebaseUtils.db
+                    .collection("zzim")
+                    .document(FirebaseUtils.getUid())
+                    .update(intent.getStringExtra("title")!!,"")
+                    .addOnSuccessListener {
+                        Toast.makeText(this, "추가되었습니다.", Toast.LENGTH_LONG).show()
+                    }
+                    .addOnFailureListener {
+                        Toast.makeText(this, "오류 발생",Toast.LENGTH_LONG).show()
+                    }
+            }
+
+            else {
+                // 이미 찜 되어 있지 않을 때
+                header_zzim.text = "추가되었습니다."
+                header_zzim.setTextColor(Color.BLUE)
+
+                FirebaseUtils.db
+                    .collection("zzim")
+                    .document(FirebaseUtils.getUid())
+                    .update(intent.getStringExtra("title")!!,true)
+                    .addOnSuccessListener {
+                        Toast.makeText(this, "추가되었습니다.", Toast.LENGTH_LONG).show()
+                    }
+                    .addOnFailureListener {
+                        Toast.makeText(this, "오류 발생", Toast.LENGTH_LONG).show()
+                    }
+            }
+            }
+
+
+
+
 
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_area, ContentFragment())

@@ -23,7 +23,7 @@
             />
 
         <ImageView
-            android:id="@+id/test_btn"
+            android:id="@+id/zzim_btn"
             android:src="@drawable/bottom_2"
             android:layout_width="0dp"
             android:layout_height="match_parent"

@@ -22,7 +22,7 @@ class FirstFragAdapter (val context: Context, val list: ArrayList<ContentListMod
         return 0
     }
 
-    override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
+        override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         val view : View
         val holder : ViewHolder
 
